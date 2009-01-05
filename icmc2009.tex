@@ -1,0 +1,68 @@
+\documentclass[twoside,10pt]{article}
+\usepackage{icmc2009,amssymb,amsmath} 
+%\setcounter{page}{1}
+
+\usepackage{mathptmx} 
+
+\def\papertitle{Paper Template for ICMC 2009, Montreal, Qc, Canada}
+%\def\papertitle{}	%-- should be empty for the submission anyway!
+
+\def\paperauthorA{} 
+\affiliation{}{}
+
+
+%---- uncomment 1 to 4 lines, for 1 to 4 authors
+%\def\paperauthorA{First author}
+%\def\paperauthorB{Second Author}
+%\def\paperauthorC{Third Author}
+%\def\paperauthorD{Fourth Author}
+
+%%---- set correspnding affiliation data for...
+%%-- 1 author
+%\affiliation{\paperauthorA}
+%  {School\\ Department, City, Country \\ {\tt \href{mailto:email@domain.icmc}{email@domain.icmc}}}
+
+%%-- 2 authors with same affiliation
+%\affiliation{\paperauthorA, \paperauthorB}
+%  {School\\ Department, City, Country \\ {\tt \href{mailto:email@domain.icmc}{email@domain.icmc}}}
+
+%-- 2 authors with different affiliations
+%\twoaffiliations{\paperauthorA}{School\\ Department}
+%  {\paperauthorB}{Company\\ Address}
+
+%%-- 3 authors with different affiliations
+%\threeaffiliations{\paperauthorA}{School A\\ Department X}
+%  {\paperauthorB}{Company\\ Address}
+%  {\paperauthorC}{School B\\ Department Y}
+
+%%-- 4 authors with different affiliations
+%\fouraffiliations{\paperauthorA}{School A\\ Department X}
+%  {\paperauthorB}{Company\\ Address}
+%  {\paperauthorC}{School B\\ Department Y}
+%  {\paperauthorD}{School C\\ Department Z}
+
+%---- the hyperref package must be last to properly work
+\usepackage[pdftex,
+       pdftitle={\papertitle},
+	pdfauthor={\paperauthorA},
+	colorlinks=false,bookmarksnumbered,pdfstartview=XYZ]{hyperref}
+%\pdfcompresslevel=9
+\usepackage[pdftex]{graphicx}	% for compatible graphics with hyperref
+\usepackage[figure,table]{hypcap}	% corrects the hyper-anchor of figures/tables
+
+\title{\papertitle}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\input{abstract}
+\end{abstract}
+
+\input{body-en}
+
+\bibliographystyle{IEEEtranS}
+\bibliography{strings,harmonic-analysis}
+
+\end{document}

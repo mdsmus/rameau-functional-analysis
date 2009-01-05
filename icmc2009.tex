@@ -1,14 +1,26 @@
 \documentclass[twoside,10pt]{article}
 \usepackage{icmc2009,amssymb,amsmath} 
-%\setcounter{page}{1}
+\usepackage{latex8}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{color}
+\usepackage{subfig}
 
 \usepackage{mathptmx} 
 
-\def\papertitle{Paper Template for ICMC 2009, Montreal, Qc, Canada}
-%\def\papertitle{}	%-- should be empty for the submission anyway!
+\def\papertitle{Functional Harmonic Analysis in Rameau}
+%\def\papertitle{}  %-- should be empty for the submission anyway!
 
-\def\paperauthorA{} 
-\affiliation{}{}
+\def\paperauthorA{Alexandre Passos}
+\def\paperauthorB{Pedro Kröger}
+\def\paperauthorC{Marcos di Silva}
+\def\paperauthorD{Fourth Author}
+\affiliation{\paperauthorA, \paperauthorB, \paperauthorC, \paperauthorD}{Universidade Federal da Bahia}
 
 
 %---- uncomment 1 to 4 lines, for 1 to 4 authors
@@ -44,11 +56,11 @@
 %---- the hyperref package must be last to properly work
 \usepackage[pdftex,
        pdftitle={\papertitle},
-	pdfauthor={\paperauthorA},
-	colorlinks=false,bookmarksnumbered,pdfstartview=XYZ]{hyperref}
+  pdfauthor={\paperauthorA},
+  colorlinks=false,bookmarksnumbered,pdfstartview=XYZ]{hyperref}
 %\pdfcompresslevel=9
-\usepackage[pdftex]{graphicx}	% for compatible graphics with hyperref
-\usepackage[figure,table]{hypcap}	% corrects the hyper-anchor of figures/tables
+\usepackage[pdftex]{graphicx} % for compatible graphics with hyperref
+\usepackage[figure,table]{hypcap} % corrects the hyper-anchor of figures/tables
 
 \title{\papertitle}
 

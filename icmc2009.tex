@@ -22,38 +22,9 @@
 \def\paperauthorD{Fourth Author}
 \affiliation{\paperauthorA, \paperauthorB, \paperauthorC, \paperauthorD}{Universidade Federal da Bahia}
 
+\newcommand{\nota}[1]{\addtocounter{notecounter}{1}{\textcolor{red}{[nota
+      \arabic{notecounter}: #1]}}}
 
-%---- uncomment 1 to 4 lines, for 1 to 4 authors
-%\def\paperauthorA{First author}
-%\def\paperauthorB{Second Author}
-%\def\paperauthorC{Third Author}
-%\def\paperauthorD{Fourth Author}
-
-%%---- set correspnding affiliation data for...
-%%-- 1 author
-%\affiliation{\paperauthorA}
-%  {School\\ Department, City, Country \\ {\tt \href{mailto:email@domain.icmc}{email@domain.icmc}}}
-
-%%-- 2 authors with same affiliation
-%\affiliation{\paperauthorA, \paperauthorB}
-%  {School\\ Department, City, Country \\ {\tt \href{mailto:email@domain.icmc}{email@domain.icmc}}}
-
-%-- 2 authors with different affiliations
-%\twoaffiliations{\paperauthorA}{School\\ Department}
-%  {\paperauthorB}{Company\\ Address}
-
-%%-- 3 authors with different affiliations
-%\threeaffiliations{\paperauthorA}{School A\\ Department X}
-%  {\paperauthorB}{Company\\ Address}
-%  {\paperauthorC}{School B\\ Department Y}
-
-%%-- 4 authors with different affiliations
-%\fouraffiliations{\paperauthorA}{School A\\ Department X}
-%  {\paperauthorB}{Company\\ Address}
-%  {\paperauthorC}{School B\\ Department Y}
-%  {\paperauthorD}{School C\\ Department Z}
-
-%---- the hyperref package must be last to properly work
 \usepackage[pdftex,
        pdftitle={\papertitle},
   pdfauthor={\paperauthorA},

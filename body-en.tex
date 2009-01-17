@@ -47,7 +47,46 @@ problems encountered on the path.
 \section{The problem}
 \label{sec:problem}
 
+Roman numeral functional analysis consists, roughly, in two
+activities: key finding and roman numeral function detection. This
+view, on the one hand, highlight the important factors for this
+specific problem but, on the other hand, ignores important sub-aspects
+of harmonic analysis such as the detection of harmonically significant
+segments, the disambiguation of enharmonic notes, the disambiguation
+of possibly different chord types (such as telling a major chord
+without a third apart from a minor chord without a third).
 
+\subsection{Key finding}
+\label{sec:key-finding}
+
+\nota{keyfinding é algo terrivelmente ambíguo, pode ter vários níveis
+  de verdade}
+
+The concept of key, in tonal music theory, is vague and ambiguous, and
+telling its many meanings apart is crucial when designing harmonic
+analysis software. When speaking of key, a musician might speak of the
+key of a piece, the key of a passage (a movement in a symphony, for
+example, might have a different key from the main key in the
+symphony), the key of a phrase, the key of a cadence, and even the key
+of a single chord (for example, it might be argued that, for a
+secondary dominant chord, its key might be said to be different from
+the overall key of the surrounding passage). Clearly, there might be
+more or less different scopes for the key of a song, and determining
+in which scope (or scopes) to perform analysis. There's also the
+problem of determining how correct the key an algorithm finds for a
+given chord is.
+
+\nota{como mostrar o resultado}
+
+Another important problem involving keyfinding is the graphical
+representation of a key that is shown to the user.
+
+\subsection{Roman function detection}
+\label{sec:roman-funct-detect}
+
+\nota{funções romanas dependem muito da tonalidade encontrada}
+
+\nota{e dependem também das notas de forma sutil}
 
 \section{The Framework}
 \label{sec:framework}

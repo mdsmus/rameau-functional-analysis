@@ -91,12 +91,62 @@ representation of a key that is shown to the user.
 \section{The Framework}
 \label{sec:framework}
 
+\nota{gabarito}
+
+The first, and arguably most important, implementation decision when
+desigining the roman numeral functional analysis part of Rameau was
+the internal format for representing a complete analysis of a
+piece. As described in \cite{kroger08:rameau}, Rameau represents a
+piece internally as a list of notes and, before analysis, converts it
+into a list of sonorities (where a sonority is a set of notes sounding
+at a given instant of time). Therefore, we chose the format for the
+roman numeral functional analysis to be a list of instantaneous
+analyzes. An instantaneous analysis is a snapshot of the analysis for
+one sonority. Due to the key granularity problem described in section
+\ref{sec:key-finding}, this snapshot only shows the most local
+information possible. Later on we will extend this format to encompass
+notions such as the overall key of a piece or a movement. Each such
+snapshot is a tuple $(K,R)$, where $K$ is the key and $R$ is the roman
+numeral analysis for that sonority under key $K$. Internally, a key is
+a tuple $(P_k,M_k)$, where $P_k$ is the key's pitch and $M_k$ is the
+key's mode (which can be major or minor). The roman function $R$ is
+also a tuple $(N,A,M_r)$, where $N$ is the roman numeral (when
+applicabble), $A$ is the number of sharps (of flats) on that numeral
+and $M_r$ is the roman function's mode. For example, a minor flat
+seventh chord in a $D$ major key is represented internally as
+$((D,major),(vii,\flat,minor)$. While this representation has some
+drawbacks, such as the impossibility of clearly marking non-harmonic
+passages, it is extensible and practical for analysing simple
+harmonies such as the Bach chorales.
+
+\nota{conferir com resultados}
+
+One of the goal of the Rameau project is understanding and comparing
+previously published and new techniques for automatic harmonic
+analysis. To properly compre harmonic analysis algorithms we have a
+corpus of 371 Bach chorales from the Riemenschneider edition
+\cite{bach41:371}, 20 of them annotated by experts with an acceptable
+harmonic analysis. Rameau includes facilities to train machine
+learning algorithms on these analyzed chorales and a bayesian
+framework for estimating the correctness of the expert annotations and
+using this estimate to derive confidence intervals for the accuracies
+of the algorithms \nota{citar monografia?}. The analysis results can
+also be neatly typeset with the aid of the Lilypond music typesetting
+program \cite{nienhuys.ea08:lilypond}.
 
 \section{Algorithms}
 \label{sec:algorithms}
 
+Using the infrastructure described in section \ref{sec:framework}
+Rameau currently has implementations of four different roman numeral
+functional analysis; a hidden Markov model, a k-nearest neighbors
+classifier and a trivial extension of Pardo \& Birmingham's chord
+labeling algorithm \cite{pardo.ea99:automated}.
+
 \subsection{Hidden Markov Model}
 \label{sec:hidden-markov-model}
+
+
 
 \subsection{KNN}
 \label{sec:knn}

@@ -46,7 +46,7 @@ Analise =  \lyricmode {
 "vi"
 "ii"
 "vii°"
-"C: V"
+"C:V"
 "V"
 "I"
 "V"
@@ -142,8 +142,9 @@ b
 }}
       >>
     }
-  >>\new Lyrics \lyricsto "nowhere" \Analise
+  >>
 \new Lyrics \lyricsto "nowhere" \Original
+\new Lyrics \lyricsto "nowhere" \Analise
 \new Lyrics \lyricsto "nowhere" \Gabarito
  >>
   \layout {

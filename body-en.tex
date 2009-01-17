@@ -146,10 +146,52 @@ labeling algorithm \cite{pardo.ea99:automated}.
 \subsection{Hidden Markov Model}
 \label{sec:hidden-markov-model}
 
+A hidden Markov model is any probabilistic function of a Markov
+chain. Using a hidden Markov model to perform roman numeral function
+analysis consists of modeling the notes in a tonal piece as a
+probabilistic function of the underlying harmonies, and finding these
+harmonies, given the notes, using traditional hidden Markov model
+algorithms. Our approach closely follows that of Raphael and Stoddard
+\cite{raphael.ea03:harmonic}, and the differences will be noted here.
 
+The underlying Markov chain is assumed to be from a pair $(K,R)$ (as
+described in section \ref{sec:framework}) to another such
+pair. Internally, though, this transition table is compressed assuming
+some invariances (without this compression we would need around $10^9$
+entries in it). The only invariance we assume is that transposing the
+music to another key with the same mode should not change its
+analysis. The notes found in the actual piece are assumed to be
+independently and identically drawn from a distribution particular to
+each possible key and roman function. This table is also compressed
+assuming a transposition invariance on the key pitch. 
+
+A good way to see how much of the underlying structure of a process is
+captured by a hidden Markov model is by analysing samples from the
+model. Figure \ref{fig:amostra} shows such a sample. As it can be
+seen, the Markov model has no concept of voice leading and is quite
+liberal in using non-chord tones. The line marked as ``Original''
+shows the undelying state sequence used by the hidden Markov model to
+generate this piece. The line labeled ``HMM Analysis'' is an analysis
+of the same piece by the HMM. It already corrects some misconceptions
+of the generating model about chord structure. Finally, the line
+labeled ``Correct Analysis'' shows the best a human expert could do to
+understand the underlying harmony of this piece. This sample also
+shows an important flaw of this technique, which is the high prior
+probability given to a piece that ends in an entirely different key
+from the one in which it started. Perhaps some notion of a ``global''
+or ``underlying'' key might improve the performance of this algorithm.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[trim=0cm 5cm 0cm 2.5cm]{amostra-markov}
+  \caption{A sample from the hidden Markov model}
+  \label{fig:amostra}
+\end{figure*}
 
 \subsection{KNN}
 \label{sec:knn}
+
+
 
 \subsection{Pardo \& Birmingham's}
 \label{sec:pardo--birminghams}

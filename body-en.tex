@@ -4,21 +4,54 @@
 
 \nota{Context}
 
-
+In the past few years we have been developing Rameau, a system for
+automatic harmonic analysis \cite{kroger08:rameau}. Rameau, as of the
+last update, had support for many different chord-labeling algorithms,
+automatic identitication of non-chordal sonorities, basic
+musicological functionality (such as cadence and voice crossing
+detection), Lilypond \cite{nienhuys.ea08:lilypond} integration, tonal
+codification support and many other interesting properties.
 
 \nota{Focus}
 
+Recently, we have implemented in Rameau support for roman numeral
+functional harmonic analysis. This includes adding notions of
+keyfinding, tonal function detection, modulation and tonicization
+detection and some other secondary features. Supporting this analysis
+involves many important musicological decisions, and has some
+non-trivial consequences. For example, many tonal pieces have phrases
+and even movements that are non-harmonical in nature, such as some
+contrapuntual passages in Brahms' no 1 quartet \nota{confirmar, citar
+  direito}. Every harmonic analysis of such a passage is nonsensical,
+and, if automatically performed, will probably find cadences in the
+noise instead of detecting the structure of the piece. Another
+important problem is how to represent, internally, a roman numeral
+functional analysis. How we approached these problems will be made
+clear in the remainder of this paper.
 
 \nota{Related work}
 
+\cite{raphael.ea03:harmonic} \cite{maxwell92:expert}
+\cite{tsui02:harmonic} \cite{temperley.ea99:modeling}
+\cite{taube99:automatic} \cite{winograd68:linguistics}
+\cite{barthelemy.ea01:figured} \cite{ulrich77:analysis}
 
 \nota{contributions}
 
+In this paper we present the infrastructure and algorithms implemented
+in Rameau to properly do functional harmonic analysis, and the
+problems encountered on the path.
 
 \nota{structure}
 
 \section{The problem}
 \label{sec:problem}
+
+
+
+\section{The Framework}
+\label{sec:framework}
+
 
 \section{Algorithms}
 \label{sec:algorithms}

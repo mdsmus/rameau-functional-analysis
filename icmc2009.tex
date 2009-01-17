@@ -1,41 +1,36 @@
 \documentclass[twoside,10pt]{article}
 \usepackage{icmc2009,amssymb,amsmath} 
-\usepackage{latex8}
 \usepackage{times}
 \usepackage{amsmath}
 \usepackage{amsthm}
-\usepackage{graphicx}
 \usepackage{url}
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{color}
 \usepackage{subfig}
-
 \usepackage{mathptmx} 
 
-\def\papertitle{Functional Harmonic Analysis in Rameau}
-%\def\papertitle{}  %-- should be empty for the submission anyway!
-
+\def\papertitle{Roman Numeral Functional Harmonic Analysis in Rameau}
 \def\paperauthorA{Alexandre Passos}
 \def\paperauthorB{Pedro Kröger}
 \def\paperauthorC{Marcos di Silva}
 \def\paperauthorD{Fourth Author}
 \affiliation{\paperauthorA, \paperauthorB, \paperauthorC, \paperauthorD}{Universidade Federal da Bahia}
 
+\usepackage[pdftex, pdftitle={\papertitle}, pdfauthor={\paperauthorA},
+colorlinks=false,bookmarksnumbered,pdfstartview=XYZ]{hyperref}
+%\pdfcompresslevel=9
+\usepackage{graphicx} % for compatible graphics with hyperref
+\usepackage[figure,table]{hypcap} % corrects the hyper-anchor of figures/tables
+
+\newcounter{notecounter}
 \newcommand{\nota}[1]{\addtocounter{notecounter}{1}{\textcolor{red}{[nota
       \arabic{notecounter}: #1]}}}
-
-\usepackage[pdftex,
-       pdftitle={\papertitle},
-  pdfauthor={\paperauthorA},
-  colorlinks=false,bookmarksnumbered,pdfstartview=XYZ]{hyperref}
-%\pdfcompresslevel=9
-\usepackage[pdftex]{graphicx} % for compatible graphics with hyperref
-\usepackage[figure,table]{hypcap} % corrects the hyper-anchor of figures/tables
 
 \title{\papertitle}
 
 \begin{document}
+
 
 \maketitle
 
@@ -46,6 +41,6 @@
 \input{body-en}
 
 \bibliographystyle{IEEEtranS}
-\bibliography{strings,harmonic-analysis}
+\bibliography{strings,harmonic-analysis,genos,programs,ismir}
 
 \end{document}

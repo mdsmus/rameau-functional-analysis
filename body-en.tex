@@ -4,13 +4,14 @@
 
 \nota{Context}
 
-In the past few years we have been developing Rameau, a system for
-automatic harmonic analysis \cite{kroger08:rameau}. Rameau, as of the
-last update, had support for many different chord-labeling algorithms,
-automatic identitication of non-chordal sonorities, basic
+In the past few years we have been developing Rameau, an open-source
+system for automatic harmonic analysis \cite{kroger08:rameau}. Rameau,
+as of the last update, had support for many different chord-labeling
+algorithms, automatic identitication of non-chordal sonorities, basic
 musicological functionality (such as cadence and voice crossing
 detection), Lilypond \cite{nienhuys.ea08:lilypond} integration, tonal
-codification support and many other interesting properties.
+codification support and many other interesting properties. Its source
+code can be found in \url{http://genos.mus.br/rameau/}.
 
 \nota{Focus}
 
@@ -62,19 +63,18 @@ without a third apart from a minor chord without a third).
 \nota{keyfinding é algo terrivelmente ambíguo, pode ter vários níveis
   de verdade}
 
-The concept of key, in tonal music theory, is vague and ambiguous, and
-telling its many meanings apart is crucial when designing harmonic
-analysis software. When speaking of key, a musician might speak of the
-key of a piece, the key of a passage (a movement in a symphony, for
-example, might have a different key from the main key in the
-symphony), the key of a phrase, the key of a cadence, and even the key
-of a single chord (for example, it might be argued that, for a
-secondary dominant chord, its key might be said to be different from
-the overall key of the surrounding passage). Clearly, there might be
-more or less different scopes for the key of a song, and determining
-in which scope (or scopes) to perform analysis. There's also the
-problem of determining how correct the key an algorithm finds for a
-given chord is.
+The word ``key'', in tonal music theory, has many similar meanings,
+and telling them apart is crucial when designing harmonic analysis
+software. When speaking of key, a musician might speak of the key of a
+piece, the key of a passage (a movement in a symphony, for example,
+might have a different key from the main key in the symphony), the key
+of a phrase, the key of a cadence, and even the key of a single chord
+(for example, it might be argued that, for a secondary dominant chord,
+its key might be said to be different from the overall key of the
+surrounding passage). Clearly, there might be more or less different
+scopes for the key of a song, and determining in which scope (or
+scopes) to perform analysis. There's also the problem of determining
+how correct the key an algorithm finds for a given chord is.
 
 \nota{como mostrar o resultado}
 
@@ -282,7 +282,7 @@ harmonic analysis in Rameau is promissory, and already has good
 results. Rameau is open source, written in Common Lisp and its source
 code (together with our data sets and instructions on how to compile,
 install and run it) are available at
-\url{http://git.genos.mus.br/?r=rameau}.
+\url{http://genos.mus.br/rameau/}.
 
 %%% Local Variables: 
 %%% mode: latex

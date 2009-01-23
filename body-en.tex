@@ -2,8 +2,6 @@
 \section{Introduction}
 \label{sec:introduction}
 
-\nota{Context}
-
 In the past few years we have been developing Rameau, an open-source
 system for automatic harmonic analysis \cite{kroger08:rameau}. Rameau,
 as of the last update, had support for many different chord-labeling
@@ -12,8 +10,6 @@ musicological functionality (such as cadence and voice crossing
 detection), Lilypond \cite{nienhuys.ea08:lilypond} integration, tonal
 codification support and many other interesting properties. Its source
 code can be found in \url{http://genos.mus.br/rameau/}.
-
-\nota{Focus}
 
 Recently, we have implemented in Rameau support for roman numeral
 functional harmonic analysis. This includes adding notions of
@@ -29,8 +25,6 @@ noise instead of detecting the structure of the piece. Another
 important problem is how to represent, internally, a roman numeral
 functional analysis. How we approached these problems will be made
 clear in the remainder of this paper.
-
-\nota{Related work}
 
 There are many published algorithms and systems for functional
 harmonic analysis. Among the earliest ones are Winograd
@@ -48,13 +42,19 @@ pattern-matching chords and tonalities. A good survey of the state of
 the art of automated harmonic analysis circa 2001 can be found in the
 work of Bathélemy et al. \cite{barthelemy.ea01:figured}.
 
-\nota{contributions}
-
 In this paper we present the infrastructure and algorithms implemented
 in Rameau to properly do functional harmonic analysis, and the
 problems encountered on the path.
 
-\nota{structure}
+Section \ref{sec:problem} gives an overview of the general problems
+encountered in automating functional harmonic analysis using roman
+numerals. Section \ref{sec:framework} describes some implementation
+decisions in Rameau that attempt to go around those problems. Section
+\ref{sec:algorithms} describes superficially each algorithm currently
+implemented in Rameau. Typical analyses are shown in section
+\ref{sec:example-analyses}, together with some comments on relative
+algorithm performance. Section \ref{sec:concl-future-work} contains
+some concluding remarks and directions for future work.
 
 \section{The problem}
 \label{sec:problem}

@@ -2,6 +2,9 @@
 \section{Introduction}
 \label{sec:introduction}
 
+\nota{kroger: lilypond integration parece ser outra coisa, é melhor dizer
+que pode ler e escrever partituras no formato lilypond}
+
 In the past few years we have been developing Rameau, an open-source
 system for automatic harmonic analysis \cite{kroger08:rameau}. Rameau,
 as of the last update, had support for many different chord-labeling
@@ -11,20 +14,25 @@ detection), Lilypond \cite{nienhuys.ea08:lilypond} integration, tonal
 codification support and many other interesting properties. Its source
 code can be found in \url{http://genos.mus.br/rameau/}.
 
+\nota{kroger: eu acho que assim fica mais claro: Recently, we have
+  implemented support for roman numeral analysis in Rameau. This
+  support includes the addition of a key finding algorithm, the
+  detection of tonal functions, modulation, and tonicization, and some
+  other secondary features.}
+
 Recently, we have implemented in Rameau support for roman numeral
 functional harmonic analysis. This includes adding notions of
 keyfinding, tonal function detection, modulation and tonicization
 detection and some other secondary features. Supporting this analysis
 involves many important musicological decisions, and has some
-non-trivial consequences. For example, many tonal pieces have phrases
-and even movements that are non-harmonical in nature, such as some
-contrapuntual passages in Brahms' no 1 quartet \nota{confirmar, citar
-  direito}. Every harmonic analysis of such a passage is nonsensical,
-and, if automatically performed, will probably find cadences in the
-noise instead of detecting the structure of the piece. Another
-important problem is how to represent, internally, a roman numeral
-functional analysis. How we approached these problems will be made
-clear in the remainder of this paper.
+non-trivial consequences. For example, some tonal pieces have passages
+with a more contrapuntal nature, like many of Brahms's compositions.
+Every harmonic analysis of such passage is nonsensical, and, if
+automatically performed, will probably find cadences in the noise
+instead of detecting the structure of the piece. Another important
+problem is how to represent, internally, a roman numeral functional
+analysis. How we approached these problems will be made clear in the
+remainder of this paper.
 
 There are many published algorithms and systems for functional
 harmonic analysis. Among the earliest ones are Winograd
@@ -61,8 +69,11 @@ some concluding remarks and directions for future work.
 \label{sec:problem}
 
 Roman numeral functional analysis consists, roughly, in two
-activities: key finding and roman numeral function detection. This
-view, on the one hand, highlight the important factors for this
+activities: key finding and roman numeral function detection. 
+
+\nota{isso nao esta claro (e ``this view'' é ruim}
+
+This view, on the one hand, highlight the important factors for this
 specific problem but, on the other hand, ignores important sub-aspects
 of harmonic analysis such as the detection of harmonically significant
 segments, the disambiguation of enharmonic notes, the disambiguation
@@ -107,35 +118,35 @@ representation of a key that is shown to the user.
 
 The first, and arguably most important, implementation decision when
 desigining the roman numeral functional analysis part of Rameau was
-the internal format for representing a complete analysis of a
-piece. As described in \cite{kroger08:rameau}, Rameau represents a
-piece internally as a list of notes and, before analysis, converts it
-into a list of sonorities (where a sonority is a set of notes sounding
-at a given instant of time). Therefore, we chose the format for the
-roman numeral functional analysis to be a list of instantaneous
-analyses. An instantaneous analysis is a snapshot of the analysis for
-one sonority. Due to the key granularity problem described in section
-\ref{sec:key-finding}, this snapshot only shows the most local
-information possible. Later on we will extend this format to encompass
-notions such as the overall key of a piece or a movement. Each such
-snapshot is a tuple $(K,R)$, where $K$ is the key and $R$ is the roman
-numeral analysis for that sonority under key $K$. Internally, a key is
-a tuple $(P_k,M_k)$, where $P_k$ is the key's pitch and $M_k$ is the
-key's mode (which can be major or minor). The roman function $R$ is
-also a tuple $(N,A,M_r)$, where $N$ is the roman numeral (when
-applicabble), $A$ is the number of sharps (of flats) on that numeral
-and $M_r$ is the roman function's mode. For example, a minor flat
-seventh chord in a $D$ major key is represented internally as
-$((D,major),(vii,\flat,minor)$. While this representation has some
-drawbacks, such as the impossibility of clearly marking non-harmonic
-passages, it is extensible and practical for analysing simple
-harmonies such as the Bach chorales.
+the internal format for representing a complete analysis of a piece.
+As described in \cite{kroger08:rameau}, Rameau represents a piece
+internally as a list of notes and, before analysis, converts it into a
+list of sonorities (where a sonority is a set of notes sounding at a
+given instant of time). \nota{merge 2 proximas frases} Therefore, we
+chose the format for the roman numeral functional analysis to be a
+list of instantaneous analyses. An instantaneous analysis is a
+snapshot of the analysis for one sonority. Due to the key granularity
+problem described in section \ref{sec:key-finding}, this snapshot only
+shows the most local information possible. Later on we will extend
+this format to encompass notions such as the overall key of a piece or
+a movement. Each such snapshot is a tuple $(K,R)$, where $K$ is the
+key and $R$ is the roman numeral analysis for that sonority under key
+$K$. Internally, a key is a tuple $(P_k,M_k)$, where $P_k$ is the
+key's pitch and $M_k$ is the key's mode (which can be major or minor).
+The roman function $R$ is also a tuple $(N,A,M_r)$, where $N$ is the
+roman numeral (when applicabble), $A$ is the number of sharps (of
+flats) on that numeral and $M_r$ is the roman function's mode. For
+example, a minor flat seventh chord in a $D$ major key is represented
+internally as $((D,major),(vii,\flat,minor)$. While this
+representation has some drawbacks, such as the impossibility of
+clearly marking non-harmonic passages, it is extensible and practical
+for analysing simple harmonies such as the Bach chorales.
 
 \nota{conferir com resultados}
 
 One of the goal of the Rameau project is understanding and comparing
 previously published and new techniques for automatic harmonic
-analysis. To properly compre harmonic analysis algorithms we have a
+analysis. To properly compare harmonic analysis algorithms we have a
 corpus of 371 Bach chorales from the Riemenschneider edition
 \cite{bach41:371}, 20 of them annotated by experts with an acceptable
 harmonic analysis. Rameau includes facilities to train machine

@@ -14,20 +14,14 @@ detection), Lilypond \cite{nienhuys.ea08:lilypond} integration, tonal
 codification support and many other interesting properties. Its source
 code can be found in \url{http://genos.mus.br/rameau/}.
 
-\nota{kroger: eu acho que assim fica mais claro: Recently, we have
-  implemented support for roman numeral analysis in Rameau. This
-  support includes the addition of a key finding algorithm, the
-  detection of tonal functions, modulation, and tonicization, and some
-  other secondary features.}
-
-Recently, we have implemented in Rameau support for roman numeral
-functional harmonic analysis. This includes adding notions of
-key finding, tonal function detection, modulation and tonicization
-detection and some other secondary features. Supporting this analysis
-involves many important musicological decisions, and has some
-non-trivial consequences. For example, some tonal pieces have passages
-with a more contrapuntal nature, like many of Brahms's compositions.
-Every harmonic analysis of such passage is nonsensical, and, if
+Recently, we have implemented support for roman numeral analysis in
+Rameau. This support includes the addition of key finding algorithms,
+the detection of tonal functions, modulation, and tonicization, and
+some other secondary features. Supporting this analysis involves many
+important musicological decisions, and has some non-trivial
+consequences. For example, some tonal pieces have passages with a more
+contrapuntal nature, like many of Brahms's compositions.  Every
+harmonic analysis of such passage is nonsensical, and, if
 automatically performed, will probably find cadences in the noise
 instead of detecting the structure of the piece. Another important
 problem is how to represent, internally, a roman numeral functional

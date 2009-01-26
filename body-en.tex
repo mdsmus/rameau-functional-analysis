@@ -2,17 +2,15 @@
 \section{Introduction}
 \label{sec:introduction}
 
-\nota{kroger: lilypond integration parece ser outra coisa, é melhor dizer
-que pode ler e escrever partituras no formato lilypond}
-
 In the past few years we have been developing Rameau, an open-source
 system for automatic harmonic analysis \cite{kroger08:rameau}. Rameau,
 as of the last update, had support for many different chord-labeling
 algorithms, automatic identification of non-chordal sonorities, basic
 musicological functionality (such as cadence and voice crossing
-detection), Lilypond \cite{nienhuys.ea08:lilypond} integration, tonal
-codification support and many other interesting properties. Its source
-code can be found in \url{http://genos.mus.br/rameau/}.
+detection), reading and writing Lilypond \cite{nienhuys.ea08:lilypond}
+files, tonal codification support and many other interesting
+properties. Its source code can be found in
+\url{http://genos.mus.br/rameau/}.
 
 Recently, we have implemented support for roman numeral analysis in
 Rameau. This support includes the addition of key finding algorithms,
@@ -65,14 +63,14 @@ some concluding remarks and directions for future work.
 Roman numeral functional analysis consists, roughly, in two
 activities: key finding and roman numeral function detection. 
 
-\nota{isso nao esta claro (e ``this view'' é ruim}
-
-This view, on the one hand, highlight the important factors for this
-specific problem but, on the other hand, ignores important sub-aspects
-of harmonic analysis such as the detection of harmonically significant
+While this division highlights the important factors for this specific
+problem it, on the other hand, ignores important sub-aspects of
+harmonic analysis such as the detection of harmonically significant
 segments, the disambiguation of enharmonic notes, the disambiguation
 of possibly different chord types (such as telling a major chord
 without a third apart from a minor chord without a third).
+
+\nota{agora está melhor?}
 
 \subsection{Key finding}
 \label{sec:key-finding}
@@ -116,25 +114,25 @@ the internal format for representing a complete analysis of a piece.
 As described in \cite{kroger08:rameau}, Rameau represents a piece
 internally as a list of notes and, before analysis, converts it into a
 list of sonorities (where a sonority is a set of notes sounding at a
-given instant of time). \nota{merge 2 proximas frases} Therefore, we
-chose the format for the roman numeral functional analysis to be a
-list of instantaneous analyses. An instantaneous analysis is a
-snapshot of the analysis for one sonority. Due to the key granularity
-problem described in section \ref{sec:key-finding}, this snapshot only
-shows the most local information possible. Later on we will extend
-this format to encompass notions such as the overall key of a piece or
-a movement. Each such snapshot is a tuple $(K,R)$, where $K$ is the
-key and $R$ is the roman numeral analysis for that sonority under key
-$K$. Internally, a key is a tuple $(P_k,M_k)$, where $P_k$ is the
-key's pitch and $M_k$ is the key's mode (which can be major or minor).
-The roman function $R$ is also a tuple $(N,A,M_r)$, where $N$ is the
-roman numeral (when applicabble), $A$ is the number of sharps (of
-flats) on that numeral and $M_r$ is the roman function's mode. For
-example, a minor flat seventh chord in a $D$ major key is represented
-internally as $((D,major),(vii,\flat,minor)$. While this
-representation has some drawbacks, such as the impossibility of
-clearly marking non-harmonic passages, it is extensible and practical
-for analysing simple harmonies such as the Bach chorales.
+given instant of time). Therefore, we chose the format for the roman
+numeral functional analysis to be a list of instantaneous analyses,
+where an instantaneous analysis is a snapshot of the analysis for one
+sonority of a song. Due to the key granularity problem described in
+section \ref{sec:key-finding}, this snapshot only shows the most local
+information possible. Later on we will extend this format to encompass
+notions such as the overall key of a piece or a movement. Each such
+snapshot is a tuple $(K,R)$, where $K$ is the key and $R$ is the roman
+numeral analysis for that sonority under key $K$. Internally, a key is
+a tuple $(P_k,M_k)$, where $P_k$ is the key's pitch and $M_k$ is the
+key's mode (which can be major or minor).  The roman function $R$ is
+also a tuple $(N,A,M_r)$, where $N$ is the roman numeral (when
+applicabble), $A$ is the number of sharps (of flats) on that numeral
+and $M_r$ is the roman function's mode. For example, a minor flat
+seventh chord in a $D$ major key is represented internally as
+$((D,major),(vii,\flat,minor)$. While this representation has some
+drawbacks, such as the impossibility of clearly marking non-harmonic
+passages, it is extensible and practical for analysing simple
+harmonies such as the Bach chorales.
 
 \nota{conferir com resultados}
 

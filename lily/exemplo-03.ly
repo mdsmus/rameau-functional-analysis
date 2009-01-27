@@ -1,4 +1,5 @@
-\version "2.12.0"
+
+\version "2.10.33"
 
 \header {
   title = "55 - Wir Christenleut'"
@@ -11,19 +12,19 @@ global =  {
 }
 
 soprano = \relative c'' {
-  fis fis e d 
+  fis4 fis e d 
   cis2 b4 
 }
 
 
 alto = \relative c'' {
-  cis b8 ais b4 b 
+  cis4 b8 ais b4 b 
   b ais fis
 }
 
 
 tenor = \relative c' {
-  e d8 cis b cis d e 
+  e4 d8 cis b cis d e 
   fis4. e8 dis4
 }
 
@@ -39,7 +40,7 @@ texto = {c4 c8 c8 c8 c8 c8 c8 c4 c8 c8 c4 }
 
 
 sonorities =  \lyricmode {
-  \set Stanza = "Sonority""1" 
+  \set Stanza = "Sonority"
   "54" 
   "55" 
   "56" 
@@ -52,154 +53,64 @@ sonorities =  \lyricmode {
   "63" 
   "64" }
 
-EStree =  \lyricmode {
-  \set stanza = "ES tree"
-  "F#7/A#"
-  "Bm/D"
-  "--"
-  "E/G#"
-  "--"
-  "Bm"
-  \markup { \roman \italic \bold \with-color #(x11-color 'red)"E!7/B"}
-  "--"
-  "F#"
-  "F#7"
-  "B"}
+FHmm =  \lyricmode {
+  \set stanza = "F Hmm"
+  "B: V"
+  "A: ii"
+  "vi"
+  "V"
+  "iii"
+  "ii"
+  "V"
+  "E: V"
+  "B: V"
+  "V"
+  "I"}
 
 
-ECKnn =  \lyricmode {
-  \set stanza = "EC Knn"
-  "F#7/A#"
-  "Bm/D"
-  "--"
-  "E/G#"
-  "--"
-  "Bm"
-  \markup { \roman \italic \bold \with-color #(x11-color 'red)"E!7/B"}
-  "--"
-  "F#"
-  "F#7"
-  "B"}
-
-
-ESKnn =  \lyricmode {
-  \set stanza = "ES Knn"
-  "F#7/A#"
-  "Bm/D"
-  "--"
-  "E/G#"
-  "--"
-  "Bm"
-  \markup { \roman \italic \bold \with-color #(x11-color 'red)"E!7/B"}
-  "--"
-  "F#"
-  "F#7"
-  "B"}
+Fknn =  \lyricmode {
+  \set stanza = "F knn"
+  "B: V"
+  "f#: iv"
+  "iv"
+  "B: IV"
+  "IV"
+  "G: iii"
+  "a#: V"
+  "b: i"
+  "B: V"
+  "V"
+  "I"}
 
 
 ESPB =  \lyricmode {
   \set stanza = "ES PB"
-  "F#7/A#"
-  "Bm/D"
-  \markup { \roman \italic \bold \with-color #(x11-color 'red)"F#/C#"}
-  "E/G#"
-  \markup { \roman \italic \bold \with-color #(x11-color 'red)"A#°"}
-  "Bm"
-  \markup { \roman \italic \bold \with-color #(x11-color 'red)"E7/B"}
-  \markup { \roman \italic \bold \with-color #(x11-color 'red)"F#!"}
-  "F#"
-  "F#7"
-  "B"}
+  "V7"
+  "i"
+  "V"
+  "IV"
+  "vii°"
+  "i"
+  "IV7"
+  "V"
+  "V"
+  "V7"
+  "I"}
 
 
-SPB =  \lyricmode {
-  \set stanza = "S PB"
-  "F#7"
-  "Bm"
-  \markup { \roman \italic \bold \with-color #(x11-color 'red)"F#"}
-  "E"
-  \markup { \roman \italic \bold \with-color #(x11-color 'red)"A#°"}
-  "Bm"
-  \markup { \roman \italic \bold \with-color #(x11-color 'red)"E7"}
-  \markup { \roman \italic \bold \with-color #(x11-color 'red)"F#"}
-  "F#"
-  "F#7"
-  "B"}
-
-
-ECNet =  \lyricmode {
-  \set stanza = "EC Net"
-  \markup { \roman \italic \bold \with-color #(x11-color 'red)"F#/A#"}
-  "Bm/D"
-  "--"
-  "E/G#"
-  "--"
-  "Bm"
-  "--"
-  "--"
-  "F#"
-  "F#7"
-  "B"}
-
-
-ESNet =  \lyricmode {
-  \set stanza = "ES Net"
-  "F#7/A#"
-  "Bm/D"
-  "--"
-  "E/G#"
-  "--"
-  "Bm"
-  "--"
-  "--"
-  "F#"
-  "F#7"
-  "B"}
-
-
-ESBay =  \lyricmode {
-  \set stanza = "ES Bay"
-  "F#7/A#"
-  "Bm/D"
-  "--"
-  "E/G#"
-  \markup { \roman \italic \bold \with-color #(x11-color 'red)"A#°"}
-  \markup { \roman \italic \bold \with-color #(x11-color 'red)"G/B"}
-  \markup { \roman \italic \bold \with-color #(x11-color 'red)"E7/B"}
-  "--"
-  "F#"
-  "F#7"
-  "B"}
-
-
-ECHmm =  \lyricmode {
-  \set stanza = "EC Hmm"
-  "F#7/A#"
-  "Bm/D"
-  \markup { \roman \italic \bold \with-color #(x11-color 'red)"D7+/C#"}
-  "E/G#"
-  \markup { \roman \italic \bold \with-color #(x11-color 'red)"A#°"}
-  "Bm"
-  \markup { \roman \italic \bold \with-color #(x11-color 'red)"E7/B"}
-  \markup { \roman \italic \bold \with-color #(x11-color 'red)"F#"}
-  "F#"
-  "F#7"
-  "B"}
-
-
-answer = \lyricmode {
-  \set stanza = "Answer"
-  "F#7/A#"
-  "Bm/D"
-  "--"
-  "E/G#"
-  "--"
-  "Bm"
-  "--"
-  "--"
-  "F#"
-  "F#7"
-  "B"}
+Tsui =  \lyricmode {
+  \set stanza = "Tsui"
+  "b: V"
+  "f#: I"
+  "A: IV"
+  "IV"
+  "b: V"
+  "I"
+  "i"
+  "B: V"
+  "V"
+  "V"
+  "b: I"}
 
 
 \score { 
@@ -209,8 +120,6 @@ answer = \lyricmode {
       \new StaffGroup <<
         \override StaffGroup.SystemStartBracket #'style = #'line 
         \new Staff {
-          \set Score.currentBarNumber = #9
-          \bar ""
           <<
             \global
             \new Voice = "soprano" { \voiceOne \soprano }
@@ -226,17 +135,12 @@ answer = \lyricmode {
           >>
         }
       >>
-    >>\new Lyrics \lyricsto "nowhere" \sonorities
-    \new Lyrics \lyricsto "nowhere" \EStree
-    \new Lyrics \lyricsto "nowhere" \ECKnn
-    \new Lyrics \lyricsto "nowhere" \ESKnn
+    >>
+    \new Lyrics \lyricsto "nowhere" \sonorities
+    \new Lyrics \lyricsto "nowhere" \FHmm
+    \new Lyrics \lyricsto "nowhere" \Fknn
     \new Lyrics \lyricsto "nowhere" \ESPB
-    \new Lyrics \lyricsto "nowhere" \SPB
-    \new Lyrics \lyricsto "nowhere" \ECNet
-    \new Lyrics \lyricsto "nowhere" \ESNet
-    \new Lyrics \lyricsto "nowhere" \ESBay
-    \new Lyrics \lyricsto "nowhere" \ECHmm
-    \new Lyrics \lyricsto "nowhere" \answer
+    \new Lyrics \lyricsto "nowhere" \Tsui
   >>
   \layout {
     \context {
@@ -246,4 +150,5 @@ answer = \lyricmode {
       \override LyricText #'font-family = #'roman
     }
   }
+  %% \midi {}
 }

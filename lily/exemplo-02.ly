@@ -1,4 +1,4 @@
-\version "2.12.0"
+\version "2.10.33"
 
 \header {
   title = "32 - Nun danket alle Gott"
@@ -43,6 +43,7 @@ baixo = \relative c {
 texto = {c4 c8 c8 c8 c8 c8 c8 c8 c8 c2 r4 c4 c4 c4 c8 c8 c8 c16 c16}
 
 
+
 sonorities =  \lyricmode {
   \set Stanza = "Sonority""1" 
   "2" 
@@ -64,233 +65,95 @@ sonorities =  \lyricmode {
   "18" 
 }
 
-EStree =  \lyricmode {
-  \set stanza = "ES tree"
-  "A"
-  "A"
-  "--"
-  "A/C#"
-  "A"
-  "D"
-  "--"
-  "D/F#"
-  "D"
-  "A"
-  "F#m/A"
-  "E7/G#"
-  "A"
-  "E"
-  "E7/D"
-  "A/C#"
-  "A"
-  "--"
+FHmm =  \lyricmode {
+  \set stanza = "F Hmm"
+  "A: I"
+  "I"
+  "I"
+  "I"
+  "D: V"
+  "I"
+  "I"
+  "I"
+  "I"
+  "A: I"
+  "vi"
+  "V"
+  "I"
+  "V"
+  "V"
+  "I"
+  "I"
+  "I"
 }
 
 
-ECKnn =  \lyricmode {
-  \set stanza = "EC Knn"
-  "A"
-  "A"
-  "--"
-  "A/C#"
-  "A"
-  "D"
-  "--"
-  "D/F#"
-  "D"
-  "A"
-  \markup { \roman \italic \bold \with-color #(x11-color 'red)"--"}
-  "E7/G#"
-  "A"
-  "E"
-  "E7/D"
-  "A/C#"
-  "A"
-  "--"
-}
-
-
-ESKnn =  \lyricmode {
-  \set stanza = "ES Knn"
-  "A"
-  "A"
-  "--"
-  "A/C#"
-  "A"
-  "D"
-  "--"
-  "D/F#"
-  "D"
-  "A"
-  "F#m/A"
-  "E7/G#"
-  "A"
-  "E"
-  "E7/D"
-  "A/C#"
-  "A"
-  "--"
+Fknn =  \lyricmode {
+  \set stanza = "F knn"
+  "A: I"
+  "I"
+  "I"
+  "I"
+  "D: V"
+  "I"
+  "I"
+  "I"
+  "I"
+  "V"
+  "A: vi"
+  "V"
+  "I"
+  "V"
+  "a: V"
+  "E: IV"
+  "A: I"
+  "d: i"
 }
 
 
 ESPB =  \lyricmode {
   \set stanza = "ES PB"
-  "A"
-  "A"
-  \markup { \roman \italic \bold \with-color #(x11-color 'red)"A/B"}
-  "A/C#"
-  "A"
-  "D"
-  \markup { \roman \italic \bold \with-color #(x11-color 'red)"D/E"}
-  "D/F#"
-  "D"
-  "A"
-  "F#m/A"
-  "E7/G#"
-  "A"
-  "E"
-  "E7/D"
-  "A/C#"
-  "A"
-  \markup { \roman \italic \bold \with-color #(x11-color 'red)"A!"}
+  "A: I"
+  "I"
+  "I"
+  "I"
+  "I"
+  "IV"
+  "IV"
+  "IV"
+  "IV"
+  "I"
+  "vi"
+  "V7"
+  "I"
+  "V"
+  "V7"
+  "I"
+  "I"
+  "I"
 }
 
 
-SPB =  \lyricmode {
-  \set stanza = "S PB"
-  "A"
-  "A"
-  \markup { \roman \italic \bold \with-color #(x11-color 'red)"A"}
-  "A"
-  "A"
-  "D"
-  \markup { \roman \italic \bold \with-color #(x11-color 'red)"D"}
-  "D"
-  "D"
-  "A"
-  "F#m"
-  "E7"
-  "A"
-  "E"
-  "E7"
-  "A"
-  "A"
-  \markup { \roman \italic \bold \with-color #(x11-color 'red)"A"}
-}
-
-
-ECNet =  \lyricmode {
-  \set stanza = "EC Net"
-  "A"
-  "A"
-  "--"
-  "A/C#"
-  "A"
-  "D"
-  "--"
-  "D/F#"
-  "D"
-  "A"
-  "F#m/A"
-  "E7/G#"
-  "A"
-  "E"
-  "E7/D"
-  "A/C#"
-  "A"
-  "--"
-}
-
-
-ESNet =  \lyricmode {
-  \set stanza = "ES Net"
-  "A"
-  "A"
-  "--"
-  "A/C#"
-  "A"
-  "D"
-  "--"
-  "D/F#"
-  "D"
-  "A"
-  "F#m/A"
-  "E7/G#"
-  "A"
-  "E"
-  "E7/D"
-  "A/C#"
-  "A"
-  "--"
-}
-
-
-ESBay =  \lyricmode {
-  \set stanza = "ES Bay"
-  "A"
-  "A"
-  "--"
-  "A/C#"
-  "A"
-  "D"
-  "--"
-  "D/F#"
-  "D"
-  "A"
-  "F#m/A"
-  "E7/G#"
-  "A"
-  "E"
-  "E7/D"
-  "A/C#"
-  "A"
-  "--"
-}
-
-
-ECHmm =  \lyricmode {
-  \set stanza = "EC Hmm"
-  "A"
-  "A"
-  \markup { \roman \italic \bold \with-color #(x11-color 'red)"A/B"}
-  "A/C#"
-  "A"
-  "D"
-  "--"
-  "D/F#"
-  "D"
-  "A"
-  "F#m/A"
-  "E7/G#"
-  "A"
-  "E"
-  "E7/D"
-  "A/C#"
-  "A"
-  "--"
-}
-
-
-answer = \lyricmode {
-  \set stanza = "Answer" 
-  "A"
-  "A"
-  "--"
-  "A/C#"
-  "A"
-  "D"
-  "--"
-  "D/F#"
-  "D"
-  "A"
-  "F#m/A"
-  "E7/G#"
-  "A"
-  "E"
-  "E7/D"
-  "A/C#"
-  "A"
-  "--"
+Tsui =  \lyricmode {
+  \set stanza = "Tsui"
+  "A: V"
+  "D: V"
+  "IV"
+  "V"
+  "V"
+  "I"
+  "A: V"
+  "I"
+  "D: I"
+  "I"
+  "A: i"
+  "V"
+  "I"
+  "V"
+  "V"
+  "I"
+  "I"
+  "I"
 }
 
 
@@ -316,17 +179,12 @@ answer = \lyricmode {
           >>
         }
       >>
-    >>\new Lyrics \lyricsto "nowhere" \sonorities
-    \new Lyrics \lyricsto "nowhere" \EStree
-    \new Lyrics \lyricsto "nowhere" \ECKnn
-    \new Lyrics \lyricsto "nowhere" \ESKnn
+    >>
+    \new Lyrics \lyricsto "nowhere" \sonorities
+    \new Lyrics \lyricsto "nowhere" \FHmm
+    \new Lyrics \lyricsto "nowhere" \Fknn
     \new Lyrics \lyricsto "nowhere" \ESPB
-    \new Lyrics \lyricsto "nowhere" \SPB
-    \new Lyrics \lyricsto "nowhere" \ECNet
-    \new Lyrics \lyricsto "nowhere" \ESNet
-    \new Lyrics \lyricsto "nowhere" \ESBay
-    \new Lyrics \lyricsto "nowhere" \ECHmm
-    \new Lyrics \lyricsto "nowhere" \answer
+    \new Lyrics \lyricsto "nowhere" \Tsui
   >>
   \layout {
     \context {
@@ -336,4 +194,5 @@ answer = \lyricmode {
       \override LyricText #'font-family = #'roman
     }
   }
+  %% \midi {}
 }

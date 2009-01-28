@@ -2,8 +2,7 @@
 \version "2.10.33"
 
 \header {
-  title = "55 - Wir Christenleut'"
-  composer = "J. S. Bach"
+  tagline = ""
 }
 
 global =  {
@@ -151,4 +150,10 @@ Tsui =  \lyricmode {
     }
   }
   %% \midi {}
+}
+
+\paper {
+  paper-width = 16\cm
+  line-width = 16\cm
+  paper-height = 12\cm
 }

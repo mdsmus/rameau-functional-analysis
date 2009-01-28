@@ -1,8 +1,9 @@
 \version "2.10.33"
 
 \header {
-  title = "32 - Nun danket alle Gott"
-  composer = "J. S. Bach"
+  %title = "32 - Nun danket alle Gott"
+  %composer = "J. S. Bach"
+  tagline = ""
 }
 
 
@@ -195,4 +196,10 @@ Tsui =  \lyricmode {
     }
   }
   %% \midi {}
+}
+
+\paper {
+  paper-width = 15\cm
+  line-width = 14\cm
+  paper-height = 12\cm
 }

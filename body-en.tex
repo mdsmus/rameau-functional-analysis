@@ -99,6 +99,16 @@ representation of a key that is shown to the user.
 \subsection{Roman function detection}
 \label{sec:roman-funct-detect}
 
+Detecting the roman function of a segment of a piece, even after
+determining its key, is also a naturally ambiguous problem. Even
+defining what are the possible roman functions is not an easy
+problem. For example, one might want to consider Naepolitan sixths as
+a roman function, or a german augmented sixth chord, even if neither
+of these is technically built from triads in the given key. Also,
+important notes in a tonal function can be ommitted from the passage
+having that function, and this is often done purposefully by the
+compose to enrich the passage \cite{schoenberg83:theory}.
+
 \nota{funções romanas dependem muito da tonalidade encontrada}
 
 \nota{e dependem também das notas de forma sutil}
@@ -289,13 +299,15 @@ with the hidden Markov model.
 
 \begin{figure*}[t]
   \centering
-  \includegraphics[trim=0cm 4cm 0cm 2.5cm]{exemplo-01}
+  \includegraphics[trim=0cm 4cm 0cm 1.5cm]{exemplo-01}
   \caption{An excerpt of the analysis of Bach chorale \#20.}
   \label{fig:ex01}
 \end{figure*}
 
 An example of the results of the functional analysis process is shown
-is figure \ref{fig:ex01}.
+is figure \ref{fig:ex01}. Each line of text under the score shows the
+results for an algorithm, and the line marked ``Answer'' shows a
+hand-crafted answer sheet for this passage.
 
 \section{Conclusions and future work}
 \label{sec:concl-future-work}

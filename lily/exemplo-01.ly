@@ -60,7 +60,7 @@ sonorities =  \lyricmode {
   "16"}
 
 FHmm =  \lyricmode {
-  \set stanza = "F Hmm"
+  \set stanza = "HMM"
   \markup { \roman \italic \bold "A: I"}
   \markup { \roman \italic \bold "vi"}
   "D: vi"
@@ -81,7 +81,7 @@ FHmm =  \lyricmode {
 
 
 Fknn =  \lyricmode {
-  \set stanza = "F knn"
+  \set stanza = "KNN"
   "D: I"
   "I"
   \markup { \roman \italic \bold "A: ii"}
@@ -102,7 +102,7 @@ Fknn =  \lyricmode {
 
 
 ESPB =  \lyricmode {
-  \set stanza = "ES PB"
+  \set stanza = "PARDO"
   "D: I"
   "I7+"
   "vi"
@@ -121,26 +121,6 @@ ESPB =  \lyricmode {
   \markup { \roman \italic \bold "#iv°"}
 }
 
-
-Tsui =  \lyricmode {
-  \set stanza = "Tsui"
-  "D: I"
-  \markup { \roman \italic \bold "c#: I"}
-  \markup { \roman \italic \bold "D: iii"}
-  \markup { \roman \italic \bold "I"}
-  \markup { \roman \italic \bold "V"}
-  "I"
-  \markup { \roman \italic \bold "VI"}
-  \markup { \roman \italic \bold "vi"}
-  \markup { \roman \italic \bold "g: I"}
-  \markup { \roman \italic \bold "D: IV"}
-  "A: V"
-  "V"
-  \markup { \roman \italic \bold "a: V"}
-  \markup { \roman \italic \bold "A: I"}
-  \markup { \roman \italic \bold "ii"}
-  \markup { \roman \italic \bold "vii°"}
-}
 
 
 answer = \lyricmode {
@@ -191,7 +171,6 @@ answer = \lyricmode {
     \new Lyrics \lyricsto "nowhere" \FHmm
     \new Lyrics \lyricsto "nowhere" \Fknn
     \new Lyrics \lyricsto "nowhere" \ESPB
-    \new Lyrics \lyricsto "nowhere" \Tsui
     \new Lyrics \lyricsto "nowhere" \answer
   >>
   \layout {

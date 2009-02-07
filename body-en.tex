@@ -18,20 +18,16 @@ the detection of tonal functions, modulation, and tonicization, and
 some other secondary features. Supporting this analysis involves many
 important musicological decisions, and has some non-trivial
 consequences. For example, some tonal pieces have passages with a more
-contrapuntal nature, like many of Brahms's compositions. \nota{para
-  mim ``in the noise'' é ok, mas talvez seja melhor reescrever para o
-  publico mais geral do icmc} Every harmonic analysis of such passage
-is nonsensical, and, if automatically performed, will probably find
-cadences in the noise instead of detecting the structure of the piece.
-Another important problem is how to represent, internally, a roman
-numeral functional analysis. \nota{``We will make clear in the
-  remainder if this paper how we approached these problems''} How we
-approached these problems will be made clear in the remainder of this
-paper.
+contrapuntal nature, like many of Brahms's compositions. Every
+harmonic analysis of such passage is nonsensical, and, if
+automatically performed, will probably find cadences where there are
+none, instead of detecting the structure of the piece.  Another
+important problem is how to represent, internally, a roman numeral
+functional analysis. We will make clear in the remainder of this paper
+how we approached these problems.
 
 There are many published algorithms and systems for functional
-harmonic analysis. Among the earliest ones are \nota{``Winograd's'',
-  winograd and ulrich's da a impressão que fizeram juntos} Winograd
+harmonic analysis. Among the earliest ones are Winograd's
 \cite{winograd68:linguistics} and Ulrich's \cite{ulrich77:analysis}
 works, both based on natural language parsing techniques. Maxwell
 \cite{maxwell92:expert} has developed an expert system whose
@@ -49,8 +45,7 @@ al. \cite{barthelemy.ea01:figured}.
 
 In this paper we present the infrastructure and algorithms implemented
 in Rameau to properly do functional harmonic analysis, and the
-problems encountered on the path \nota{provavelmente ``along the way''
-  é mais comum/correto que ``on the path''}.
+problems encountered along the way.
 
 Section \ref{sec:problem} gives an overview of the general problems
 encountered in automating functional harmonic analysis using roman
@@ -82,10 +77,6 @@ without a third apart from a minor chord without a third).
 \subsection{Key finding}
 \label{sec:key-finding}
 
-\nota{key finding é algo terrivelmente ambíguo, pode ter vários níveis
-  de verdade. é tão ambiguo quanto ter varios escopos aninhados em um
-  programa de computador.}
-
 The word ``key'', in tonal music theory, has many similar meanings,
 and telling them apart is crucial when designing harmonic analysis
 software. When speaking of key, a musician might speak of the key of a
@@ -98,8 +89,6 @@ surrounding passage). Clearly, there might be more or less different
 scopes for the key of a song, and determining in which scope (or
 scopes) to perform analysis. There's also the problem of determining
 how correct the key an algorithm finds for a given chord is.
-
-\nota{como mostrar o resultado}
 
 Another important problem involving key finding is the graphical
 representation of a key that is shown to the user.
@@ -120,7 +109,6 @@ representation of a key that is shown to the user.
   possibilidades) e deixar essas coisas claras no texto. (podemos
   conversar no irc/skype se for necessario)}
 
-\nota{dizer porque é ambiguo}
 Detecting the roman function of a segment of a piece, even after
 determining its key, is also a naturally ambiguous problem. Even
 defining what are the possible roman functions is not an easy
@@ -131,14 +119,9 @@ important notes in a tonal function can be ommitted from the passage
 having that function, and this is often done purposefully by the
 compose to enrich the passage \cite{schoenberg83:theory}.
 
-\nota{funções romanas dependem muito da tonalidade encontrada}
-
-\nota{e dependem também das notas de forma sutil}
 
 \section{The Framework}
 \label{sec:framework}
-
-\nota{gabarito}
 
 The first, and arguably most important, implementation decision when
 desigining the roman numeral functional analysis part of Rameau was
@@ -166,19 +149,18 @@ drawbacks, such as the impossibility of clearly marking non-harmonic
 passages, it is extensible and practical for analysing simple
 harmonies such as the Bach chorales.
 
-\nota{``One of the goal of the Rameau project is to understand and
-  compare''} One of the goal of the Rameau project is understanding and
-comparing previously published and new techniques for automatic
-harmonic analysis. To properly compare harmonic analysis algorithms we
-have a corpus of 371 Bach chorales from the Riemenschneider edition
+One of the goals of the Rameau project to understand and compare
+previously published and new techniques for automatic harmonic
+analysis. To properly compare harmonic analysis algorithms we have a
+corpus of 371 Bach chorales from the Riemenschneider edition
 \cite{bach41:371}, 20 of them annotated by experts with an acceptable
 harmonic analysis. Rameau includes facilities to train machine
 learning algorithms on these analyzed chorales and a bayesian
 framework for estimating the correctness of the expert annotations and
 using this estimate to derive confidence intervals for the accuracies
-of the algorithms \nota{citar monografia? sim!}. The analysis results can
-also be neatly typeset with the aid of the Lilypond music typesetting
-program \cite{nienhuys.ea08:lilypond}.
+of the algorithms \nota{citar monografia? sim!}. The analysis results
+can also be neatly typeset with the aid of the Lilypond music
+typesetting program \cite{nienhuys.ea08:lilypond}.
 
 \section{Algorithms}
 \label{sec:algorithms}
@@ -213,20 +195,19 @@ assuming a transposition invariance on the key pitch.
 
 A good way to see how much of the underlying structure of a process is
 captured by a hidden Markov model is by analysing samples from the
-model. Figure \ref{fig:amostra} shows such a sample. \nota{``As we can
-  see''} As it can be seen, the Markov model has no concept of voice
-leading and is quite liberal in using non-chord tones. The line marked
-as ``Original'' shows the undelying state sequence used by the hidden
-Markov model to generate this piece. The line labeled ``HMM Analysis''
-is an analysis of the same piece by the HMM. It already corrects some
-misconceptions of the generating model about chord structure. Finally,
-the line labeled ``Correct Analysis'' shows the best a human expert
-could do to understand the underlying harmony of this piece. This
-sample also shows an important flaw of this technique, which is the
-high prior probability given to a piece that ends in an entirely
-different key from the one in which it started. Perhaps some notion of
-a ``global'' or ``underlying'' key might improve the performance of
-this algorithm.
+model. Figure \ref{fig:amostra} shows such a sample. As we can see,
+the Markov model has no concept of voice leading and is quite liberal
+in using non-chord tones. The line marked as ``Original'' shows the
+undelying state sequence used by the hidden Markov model to generate
+this piece. The line labeled ``HMM Analysis'' is an analysis of the
+same piece by the HMM. It already corrects some misconceptions of the
+generating model about chord structure. Finally, the line labeled
+``Correct Analysis'' shows the best a human expert could do to
+understand the underlying harmony of this piece. This sample also
+shows an important flaw of this technique, which is the high prior
+probability given to a piece that ends in an entirely different key
+from the one in which it started. Perhaps some notion of a ``global''
+or ``underlying'' key might improve the performance of this algorithm.
 
 \begin{figure*}[t]
   \centering
@@ -237,8 +218,6 @@ this algorithm.
 
 \subsection{K-Nearest Neighbors}
 \label{sec:knn}
-
-\nota{eu suponho que voce queira dizer infty e nao inf}
 
 \begin{algorithm}[t]
   \SetLine
@@ -266,7 +245,7 @@ algorithm \ref{alg:knn} describes the main idea.
 
 To apply a knn classifier in roman numeral functional analysis first
 we need to choose a spatial representation of a segment of a piece,
-describe\nota{,} and appropriate distance function and choose a training
+describe an appropriate distance function, and choose a training
 set. The representation we chose for Rameau is a pitch frequency array
 $a$, in which, if $f*n$ on the $n$ pitches in a given sonority are
 encoded (is some codification such as pitch-class or the one described
@@ -330,7 +309,6 @@ with the hidden Markov model.
   \label{fig:ex01}
 \end{figure*}
 
-\nota{comentar os resultados}
 An example of the results of the functional analysis process is shown
 is figure \ref{fig:ex01}. Each line of text under the score shows the
 results for an algorithm, and the line marked ``Answer'' shows a
@@ -339,15 +317,11 @@ hand-crafted answer sheet for this passage.
 \section{Conclusions and future work}
 \label{sec:concl-future-work}
 
-\nota{voce é o literário do grupo, mas eu acho ``rameau is
-  promissory'' estranho, especialmente porque promissory tambem é
-  promissório como em ``nota promissória''} While still preliminary,
-the current implementation of functional harmonic analysis in Rameau
-is promissory, and already has good results. Rameau is open source,
-written in Common Lisp and its source code (together with our data
-sets and instructions on how to compile, install and run it)
-\nota{``is'' ja que o resto esta entre parenteses} are available at
-\url{http://genos.mus.br/rameau/}.
+While still preliminary, the current implementation of functional
+harmonic analysis in Rameau is promising, and already has good
+results. Rameau is open source, written in Common Lisp and its source
+code (together with our data sets and instructions on how to compile,
+install and run it) is available at \url{http://genos.mus.br/rameau/}.
 
 %%% Local Variables: 
 %%% mode: latex

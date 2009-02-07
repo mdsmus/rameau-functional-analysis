@@ -57,21 +57,21 @@ Analise =  \lyricmode {
 Gabarito =  \lyricmode {
 \set stanza = "Correct analysis"
 "A: ?"
-"vii°"
+"bVII6"
 "iiø"
-"I"
-"vi"
+"I6"
+"vi.add9"
 "ii"
 "vii°"
 "C:V"
-"V"
+"V6"
 "I"
 "V"
-"V"
-"V"
+"V7"
+"V6"
 }
 
-
+% A: ? bVII6 iiø I6 vi.add9 ii vii° C: V V6 I V V7 V6
 \score { << \new Devnull = "nowhere" \texto  <<
     \new Staff {  
       <<

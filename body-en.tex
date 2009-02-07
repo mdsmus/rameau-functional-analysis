@@ -62,7 +62,9 @@ some concluding remarks and directions for future work.
 \label{sec:problem}
 
 Roman numeral functional analysis consists, roughly, in two
-activities: key finding and roman numeral function detection. 
+activities: key finding---determining what is the tonal center of the
+piece and its parts---and roman numeral function
+detection---determining the tonal function of each segment of the piece. 
 
 While this division highlights the important factors for this specific
 problem it, on the other hand, ignores important sub-aspects of
@@ -70,10 +72,6 @@ harmonic analysis such as the detection of harmonically significant
 segments, the disambiguation of enharmonic notes, the disambiguation
 of possibly different chord types (such as telling a major chord
 without a third apart from a minor chord without a third).
-
-\nota{agora está melhor? sim, talvez seja melhor falar mais na 1a
-  frase, i.e. qual o problema em achar a tonalidade? qual o problema
-  em detectar o numeral romano?}
 
 \subsection{Key finding}
 \label{sec:key-finding}
@@ -160,9 +158,10 @@ harmonic analysis. Rameau includes facilities to train machine
 learning algorithms on these analyzed chorales and a bayesian
 framework for estimating the correctness of the expert annotations and
 using this estimate to derive confidence intervals for the accuracies
-of the algorithms \nota{citar monografia? sim!}. The analysis results
-can also be neatly typeset with the aid of the Lilypond music
-typesetting program \cite{nienhuys.ea08:lilypond}.
+of the algorithms\footnote{A reference for this result was removed for
+  anonymity.}. The analysis results can also be neatly typeset with
+the aid of the Lilypond music typesetting program
+\cite{nienhuys.ea08:lilypond}.
 
 \section{Algorithms}
 \label{sec:algorithms}

@@ -1,5 +1,5 @@
-\documentclass[twoside,10pt]{article}
-\usepackage{icmc2009,amssymb,amsmath} 
+\documentclass[12pt]{article}
+\usepackage{sbc-template,amssymb,amsmath} 
 \usepackage{times}
 \usepackage{amsmath}
 \usepackage{amsthm}
@@ -10,27 +10,18 @@
 \usepackage{subfig}
 \usepackage{mathptmx} 
 \usepackage[ruled]{algorithm2e}
-
-\def\papertitle{Functional Harmonic Analysis in Rameau}
-\def\paperauthorA{} %{Alexandre Passos}
-\def\paperauthorB{} %{Pedro Kröger}
-\def\paperauthorC{} %{Marcos Sampaio}
-\def\paperauthorD{} %{Fourth Author}
-\affiliation{\paperauthorA \paperauthorB \paperauthorC
-  \paperauthorD}{} % Universidade Federal da Bahia
-
-\usepackage[pdftex, pdftitle={\papertitle}, pdfauthor={\paperauthorA},
-colorlinks=false,bookmarksnumbered,pdfstartview=XYZ]{hyperref}
-%\pdfcompresslevel=9
+\usepackage[pdftex,colorlinks=false,bookmarksnumbered,pdfstartview=XYZ]{hyperref}
 \usepackage{graphicx} % for compatible graphics with hyperref
 \usepackage[figure,table]{hypcap} % corrects the hyper-anchor of figures/tables
+
 
 \newcounter{notecounter}
 \newcommand{\nota}[1]{\addtocounter{notecounter}{1}{\textcolor{red}{[nota
       \arabic{notecounter}: #1]}}}
 
-\title{\papertitle}
-
+\title{Functional Harmonic Analysis and Computational Musicology in Rameau}
+\author{}
+\address{}
 \begin{document}
 
 
@@ -42,7 +33,7 @@ colorlinks=false,bookmarksnumbered,pdfstartview=XYZ]{hyperref}
 
 \input{body-en}
 
-\bibliographystyle{IEEEtranS}
-\bibliography{strings,harmonic-analysis,genos,programs,ismir,music-scores,artificial-inteligence}
+\bibliographystyle{sbc}
+\bibliography{strings-short,genos,ismir,programs,coding,harmonic-analysis,dont-have,artificial-inteligence,music-harmony-and-theory,licenses,icmc,music-scores,computational-musicology}
 
 \end{document}

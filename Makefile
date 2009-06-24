@@ -1,4 +1,4 @@
-NAME = icmc2009
+NAME = sbcm2009
 TEXSRCS = body-en.tex abstract.tex
 
 OTHER += $(LILY_PDF) $(SVG_PDF) $(GNUPLOT_PDF)

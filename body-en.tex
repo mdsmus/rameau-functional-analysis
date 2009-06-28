@@ -26,22 +26,22 @@ the piece.  Another important problem is how to represent, internally,
 a roman numeral functional analysis. We will make clear in the
 remainder of this paper how we approached these problems.
 
-There are many published algorithms and systems for functional
-harmonic analysis. Among the earliest ones are Winograd's
-\cite{winograd68:linguistics} and Ulrich's \cite{ulrich77:analysis}
-works, both based on natural language parsing techniques. Maxwell
-\cite{maxwell92:expert} has developed an expert system whose
-functionality is currently under implementation in Rameau. The hidden
-Markov model described in section \ref{sec:hidden-markov-model} is
-loosely based on work by Raphael et
-al. \cite{raphael.ea03:harmonic}. In Rameau there are some neural
-network algorithms, loosely based on Tsui's master's thesis
-\cite{tsui02:harmonic}. Taube \cite{taube99:automatic} has implemented
-a music theory workbench that performs, among other activities,
-functional harmonic analysis pattern-matching chords and tonalities. A
-good survey of the state of the art of automated harmonic analysis
-circa 2001 can be found in the work of Bathélemy et
-al. \cite{barthelemy.ea01:figured}.
+% There are many published algorithms and systems for functional
+% harmonic analysis. Among the earliest ones are Winograd's
+% \cite{winograd68:linguistics} and Ulrich's \cite{ulrich77:analysis}
+% works, both based on natural language parsing techniques. Maxwell
+% \cite{maxwell92:expert} has developed an expert system whose
+% functionality is currently under implementation in Rameau. The hidden
+% Markov model described in section \ref{sec:hidden-markov-model} is
+% loosely based on work by Raphael et
+% al. \cite{raphael.ea03:harmonic}. In Rameau there are some neural
+% network algorithms, loosely based on Tsui's master's thesis
+% \cite{tsui02:harmonic}. Taube \cite{taube99:automatic} has implemented
+% a music theory workbench that performs, among other activities,
+% functional harmonic analysis pattern-matching chords and tonalities. A
+% good survey of the state of the art of automated harmonic analysis
+% circa 2001 can be found in the work of Bathélemy et
+% al. \cite{barthelemy.ea01:figured}.
 
 In this paper we present Rameau's structure for computational
 musicology, the infrastructure and algorithms implemented in Rameau to
@@ -59,8 +59,7 @@ each algorithm currently implemented in Rameau. Typical analyses are
 shown in section \ref{sec:example-analyses}, together with some
 comments on relative algorithm performance. Section
 \ref{sec:concl-future-work} contains some concluding remarks and
-directions for future work. finally, section \ref{sec:conclusion}
-contains some concluding remarks and directions for future work.
+directions for future work. 
 
 \section{Overview of Rameau}
 \label{sec:system}
@@ -99,15 +98,12 @@ other in a graphical representation). For instance, a C major chord
 with 7th, 9th, and 13th is represented as C7.9.13. The following is
 the complete answer sheet for the chord name analysis of chorale
 \#130:
-
 \begin{verbatim}
 Em D/F# G B7/F# Em B/D# C/E D7/F# [A] Em7
 Am7/C Am7 D G G G/B D D Am/C Em/B [A] B 
 B7 Em
 \end{verbatim}
-
 and the complete answer sheet for the roman numeral analysis is:
-
 \begin{verbatim}
 e: i V6/III III V4.3 i V6 VI6 V6.5/III
 III i G: ii6.5 ii7 V I I I6 V -
@@ -166,24 +162,30 @@ Chorales are parallel, although a few fifths are (in chorales 4, 46,
 \end{figure}
 
 The command ``chords'' list the frequency of each type of chord in a
-set of chorales. For instance, we can see the type of chords in
-chorale \#130 in the following list:
+set of chorales. For instance, table~\ref{tab:ctc130} shows the type
+of chords in chorale \#130.
 
-\begin{verbatim}
- C/F#                : 4.2% (1 of 24)
- C/D#                : 4.2% (1 of 24)
- C/E                 : 4.2% (1 of 24)
- Cm7/C               : 4.2% (1 of 24)
- Cm7                 : 4.2% (1 of 24)
- C/B                 : 4.2% (1 of 24)
- Cm/C                : 4.2% (1 of 24)
- Cm/B                : 4.2% (1 of 24)
- C7                  : 4.2% (1 of 24)
- C7/F#               : 8.3% (2 of 24)
- --                  : 8.3% (2 of 24)
- Cm                  : 16.7% (4 of 24)
- C                   : 29.2% (7 of 24)
-\end{verbatim}
+\begin{table}[t]
+  \centering
+\begin{tabular}{l|l} \hline
+ Chord type & Frequency (\%) \\ \hline
+ C/F\#                & 4.2 \\
+ C/D\#                & 4.2\\
+ C/E                 & 4.2\\
+ Cm7/C               & 4.2\\
+ Cm7                 & 4.2\\
+ C/B                 & 4.2\\
+ Cm/C                & 4.2\\
+ Cm/B                & 4.2\\
+ C7                  & 4.2\\
+ C7/F\#               & 8.3\\
+ --                  & 8.3\\
+ Cm                  &16.7\\
+ C                   &29.2 \\ \hline
+\end{tabular}
+\caption{Chord types in in chorale \# 130}
+\label{tab:ctc130}
+\end{table}
 
 Not surprisingly, the major and minor triad account for the majority
 of chord types. But more than 8.3\% are non-chords (marked with a
@@ -192,9 +194,9 @@ C/D$\sharp$ are probably non-chord tones as well. With this command we
 can inspect what are the most used types of sonorities, besides the
 major and minor triads.
 
-The command ``crossings'' find passages where are voice crossings. We
-found that there are some kind of voice crossing in 57\% of the Bach
-Chorales, although most of the crossings happen in a short period of
+The command ``crossings'' finds passages where are voice crossings. We
+found that in 57\% of the Bach chorales there is some kind of voice
+crossing, although most of the crossings happen in a short period of
 time (no more than two beats). There are a few interesting cases. For
 instance, the alto is the lowest voice for a brief period of time in
 chorale \#35 (fig. \ref{fig:035-cruzamento}) and there is a crossing
@@ -203,10 +205,10 @@ of the soprano and alto and tenor and bass at the same time in chorale
 
 There are also commands to find the vocal range used in a composition,
 to find melodic jumps in a voice (to analyze vocal writing, for
-example), to show how the seventh of chords were resolved, and to
-collect stats on how many chord progressions found in the chorales are
+example), to collect statistics on seventh notes' resolution, and to
+collect data on how many chord progressions found in the chorales are
 strong, weak, superstrong and neutral, according to Schoenberg's
-theory of harmony.
+theory of harmony \cite{schoenberg83:theory}.
 
 \begin{figure}[!h]
   \centering

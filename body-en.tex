@@ -3,15 +3,14 @@
 \label{sec:introduction}
 
 In the past few years we have been developing Rameau, an open-source
-system for automatic harmonic analysis and computational
-musicology\footnote{The reference was removed for anonymity and will
-  be added in the final version.}. Rameau, as of the last update, had
-support for many different chord-labeling algorithms, automatic
-identification of non-chordal sonorities, basic musicological
-functionality (such as cadence and voice crossing detection), reading
-and writing Lilypond \cite{nienhuys.ea08:lilypond} files, tonal
-codification support and many other interesting properties. Its source
-code can be found in \url{http://removed/for/anonymity/}.
+system for automatic harmonic analysis and computational musicology
+\cite{kroger08:rameau}. Rameau, as of the last update, had support for
+many different chord-labeling algorithms, automatic identification of
+non-chordal sonorities, basic musicological functionality (such as
+cadence and voice crossing detection), reading and writing Lilypond
+\cite{nienhuys.ea08:lilypond} files, tonal codification support and
+many other interesting properties. Its source code can be found in
+\url{http://genos.mus.br/rameau/}.
 
 Recently, we have implemented support for roman numeral analysis in
 Rameau. This support includes the addition of key finding algorithms,
@@ -25,23 +24,6 @@ cadences where there are none, instead of detecting the structure of
 the piece.  Another important problem is how to represent, internally,
 a roman numeral functional analysis. We will make clear in the
 remainder of this paper how we approached these problems.
-
-% There are many published algorithms and systems for functional
-% harmonic analysis. Among the earliest ones are Winograd's
-% \cite{winograd68:linguistics} and Ulrich's \cite{ulrich77:analysis}
-% works, both based on natural language parsing techniques. Maxwell
-% \cite{maxwell92:expert} has developed an expert system whose
-% functionality is currently under implementation in Rameau. The hidden
-% Markov model described in section \ref{sec:hidden-markov-model} is
-% loosely based on work by Raphael et
-% al. \cite{raphael.ea03:harmonic}. In Rameau there are some neural
-% network algorithms, loosely based on Tsui's master's thesis
-% \cite{tsui02:harmonic}. Taube \cite{taube99:automatic} has implemented
-% a music theory workbench that performs, among other activities,
-% functional harmonic analysis pattern-matching chords and tonalities. A
-% good survey of the state of the art of automated harmonic analysis
-% circa 2001 can be found in the work of Bathélemy et
-% al. \cite{barthelemy.ea01:figured}.
 
 In this paper we present Rameau's structure for computational
 musicology, the infrastructure and algorithms implemented in Rameau to
@@ -297,30 +279,28 @@ the passage \cite{schoenberg83:theory}.
 The first, and arguably most important, implementation decision when
 desigining the roman numeral functional analysis part of Rameau was
 the internal format for representing a complete analysis of a piece.
-As described in\footnote{This reference was also removed for
-  anonymity reasons, and will be present in the final paper.}, Rameau
-represents a piece internally as a list of notes and, before analysis,
-converts it into a list of sonorities, where a sonority is a set of
-notes sounding at a given instant of time. Therefore, we chose the
-format for the roman numeral functional analysis to be a list of
-instantaneous analyses, where an instantaneous analysis is a snapshot
-of the analysis for one sonority of a song. Due to the key granularity
-problem described in section \ref{sec:key-finding}, this snapshot only
-shows the most local information possible. Later on we will extend
-this format to encompass notions such as the overall key of a piece or
-a movement. Each such snapshot is a tuple $(K,R)$, where $K$ is the
-key and $R$ is the roman numeral analysis for that sonority under key
-$K$. Internally, a key is a tuple $(P_k,M_k)$, where $P_k$ is the
-key's pitch and $M_k$ is the key's mode (which can be major or minor).
-The roman function $R$ is also a tuple $(N,A,M_r)$, where $N$ is the
-roman numeral (when applicabble), $A$ is the number of sharps (of
-flats) on that numeral and $M_r$ is the roman function's mode. For
-example, a minor flat seventh chord in a $D$ major key is represented
-internally as $((D,major),(vii,\flat,minor)$. While this
-representation has some drawbacks, such as the impossibility of
-clearly marking non-harmonic passages, it is extensible and practical
-for analysing simple harmonies and textures such as the Bach
-chorales.
+As described in \cite{kroger08:rameau}, Rameau represents a piece
+internally as a list of notes and, before analysis, converts it into a
+list of sonorities, where a sonority is a set of notes sounding at a
+given instant of time. Therefore, we chose the format for the roman
+numeral functional analysis to be a list of instantaneous analyses,
+where an instantaneous analysis is a snapshot of the analysis for one
+sonority of a song. Due to the key granularity problem described in
+section \ref{sec:key-finding}, this snapshot only shows the most local
+information possible. Later on we will extend this format to encompass
+notions such as the overall key of a piece or a movement. Each such
+snapshot is a tuple $(K,R)$, where $K$ is the key and $R$ is the roman
+numeral analysis for that sonority under key $K$. Internally, a key is
+a tuple $(P_k,M_k)$, where $P_k$ is the key's pitch and $M_k$ is the
+key's mode (which can be major or minor).  The roman function $R$ is
+also a tuple $(N,A,M_r)$, where $N$ is the roman numeral (when
+applicabble), $A$ is the number of sharps (of flats) on that numeral
+and $M_r$ is the roman function's mode. For example, a minor flat
+seventh chord in a $D$ major key is represented internally as
+$((D,major),(vii,\flat,minor)$. While this representation has some
+drawbacks, such as the impossibility of clearly marking non-harmonic
+passages, it is extensible and practical for analysing simple
+harmonies and textures such as the Bach chorales.
 
 One of the goals of the Rameau project to understand and compare
 previously published and new techniques for automatic harmonic
@@ -331,8 +311,7 @@ harmonic analysis. Rameau includes facilities to train machine
 learning algorithms on these analyzed chorales and a bayesian
 framework for estimating the correctness of the expert annotations and
 using this estimate to derive confidence intervals for the accuracies
-of the algorithms\footnote{A reference for this result was removed for
-  anonymity.}. The analysis results can also be neatly typeset with
+of the algorithms. The analysis results can also be neatly typeset with
 the aid of the Lilypond music typesetting program
 \cite{nienhuys.ea08:lilypond}.
 
@@ -425,8 +404,7 @@ describe an appropriate distance function, and choose a training
 set. The representation we chose for Rameau is a pitch frequency array
 $a$, in which, if $f*n$ on the $n$ pitches in a given sonority are
 encoded (is some codification such as pitch-class or the one described
-in\footnote{The reference to the original paper was removed for
-  anonymity reasons.}) as having number $p$, then $a[p] = f$. When
+in \cite{kroger08:rameau}) as having number $p$, then $a[p] = f$. When
 considering surrounding context, we concatenate these arrays and, to
 avoid adding too much noise in the distance function we weight them
 down in proportion to the square of the distance between the
@@ -511,9 +489,9 @@ K-nearest neighbors, Pardo \& Birmingham's, and neural networks
 functional harmonic analysis algorithms. Rameau is open source,
 written in Common Lisp and its source code (together with our data
 sets and instructions on how to compile, install and run it) is
-available at \url{http://removed/for/anonymity/}.
+available at \url{http://genos.mus.br/rameau/}.
 
 %%% Local Variables: 
 %%% mode: latex
-%%% TeX-master: "icmc2009"
+%%% TeX-master: "sbcm2009"
 %%% End: 

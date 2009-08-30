@@ -1,5 +1,4 @@
 \documentclass[a0paper]{sciposter}
-\usepackage[brazil]{babel}
 \RequirePackage[utf8,utf8x]{inputenc}
 \usepackage{url}
 \usepackage{multicol}
@@ -239,6 +238,137 @@ almost competitively with the hidden Markov model.
 
 \begin{center}
 \begin{multicols}{2}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=1]{rameau-web}
+  \caption{Rameau's web interface}
+  \label{fig:rameau-web}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=1]{analysis-130}
+  \caption{Chord name analysis}
+  \label{fig:chord-name-analysis}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[scale=1]{analysis-functional-130}  
+  \caption{Roman numeral analysis}
+  \label{fig:roman-analysis}
+\end{figure}
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[Chorale \#244]{
+    \includegraphics[scale=2]{244-oitava}
+    \label{fig:244-oitava}
+  }
+  \qquad
+  \subfigure[Chorale \#279]{
+    \includegraphics[scale=2]{279-oitava}
+    \label{fig:279-oitava}
+  }
+  \qquad
+  \subfigure[Chorale \#329]{
+    \includegraphics[scale=2]{329-oitava}
+    \label{fig:329-oitava}
+  }
+  \caption{Consecutive octaves and unisons}
+  \label{fig:oitavas-e-unissonos}
+\end{figure}
+
+\begin{table}[t]
+  \centering
+\begin{tabular}{l|l} \hline
+ Chord type & Frequency (\%) \\ \hline
+ C/F\#                & 4.2 \\
+ C/D\#                & 4.2\\
+ C/E                 & 4.2\\
+ Cm7/C               & 4.2\\
+ Cm7                 & 4.2\\
+ C/B                 & 4.2\\
+ Cm/C                & 4.2\\
+ Cm/B                & 4.2\\
+ C7                  & 4.2\\
+ C7/F\#               & 8.3\\
+ --                  & 8.3\\
+ Cm                  &16.7\\
+ C                   &29.2 \\ \hline
+\end{tabular}
+\caption{Chord types in in chorale \# 130}
+\label{tab:ctc130}
+\end{table}
+
+\begin{figure}[!h]
+  \centering
+  \subfigure[Chorale \#35]{
+    \includegraphics[scale=2]{035-16-20-cruzamento}
+    \label{fig:035-cruzamento}
+  }
+  \subfigure[Chorale \#290]{
+    \includegraphics[scale=2]{290-66-74-cruzamento}
+    \label{fig:290-66-74-cruzamento}
+  }
+  \caption{Voice crossing}
+  \label{fig:coral-003}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=1]{cadences}
+  \caption{Final cadences in Bach Chorales}
+  \label{fig:cadences}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[scale=1.5,trim=0cm 5cm 0cm 2.5cm]{amostra-markov}
+  \caption{A sample from the hidden Markov model}
+  \label{fig:amostra}
+\end{figure}
+
+\begin{algorithm}[t]
+%   \SetLine
+%   \KwIn{$x$, an instance to be classified}
+%   $nearest = nil$\;
+%   $distance = \infty$\;
+%   \For{each example $e$}{
+%     \If{$d(e,x) < distance$}{
+%       $nearest = e$\;
+%       $distance = d(e,x)$\;
+%     }
+%   }
+%   \KwRet{$class(nearest)$}\;
+  \caption{A nearest neighbor classifier (a knn for $k=1$).}
+  \label{alg:knn}
+\end{algorithm}
+
+\begin{table}[h]
+  \centering
+  \begin{small}
+    \begin{sc}
+      \begin{tabular}[t]{ll} \hline
+        Chord type & Notes (counting from c) \\ \hline
+        Major triad & c e g \\
+        Major-minor chord &  c e g b$\flat$ \\
+        Minor triad & c e$\flat$ g \\
+        Minor-minor chord & c $e\flat$ g b$\flat$ \\
+        Fully diminished chord & c e$\flat$ g$\flat$ b$\flat\flat$ \\
+        Half-diminished chord & c e$\flat$ g$\flat$ b$\flat$ \\
+        Diminished triad & c e$\flat$ g$\flat$ \\
+        Major-major chord & c e g b \\
+        Augmented triad & c e g$\sharp$ \\
+        German sixth  & c e g a$\sharp$ \\
+        Italian sixth & c e a$\sharp$ \\
+        French sixth & c e f$\sharp$ a$\sharp$ \\ \hline
+      \end{tabular}
+    \end{sc}
+  \end{small}
+  \caption{Templates for the Pardo \& Birmingham algorithm.}
+  \label{tab:templates-pardo}
+\end{table}
 
 
 \end{multicols}

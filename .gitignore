@@ -12,3 +12,9 @@ auto/
 sbcm2009.pdf
 icmc2009.pdf
 poster/rameau-sbcm-2009.pdf
+slides/exemplos-gui-rameau/
+slides/slides-rameau-sbcm2009.pdf
+slides/*.nav
+slides/*.snm
+slides/*.toc*
+slides/*.vrb
